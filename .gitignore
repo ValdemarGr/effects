@@ -1,2 +1,8 @@
-.stack-work/
-*~
+.terraform*
+.idea
+.ijwb
+bazel-*
+.bloop
+.metals
+*.iml
+.stack-work
