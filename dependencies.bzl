@@ -7,7 +7,7 @@ scala_versions = make_scala_versions(
 )
 
 project_deps = [
-    scala_dependency("org.typelevel", "cats-effect", "3.2.2"),
+    scala_dependency("com.olegpy", "better-monadic-for", "0.3.1"),
 ]
 
 def add_scala_fullver(s):

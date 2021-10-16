@@ -1,0 +1,12 @@
+load("@io_bazel_rules_scala//scala:scala.bzl", "scala_library")
+load("@scala_things//:flags/flags.bzl", "flags")
+
+scala_library(
+    name = "effects",
+    srcs = glob(["*.scala"]),
+    plugins = [
+        "@maven//:com_olegpy_better_monadic_for_2_13",
+    ],
+    scalacopts = flags,
+    visibility = ["//visibility:public"],
+)
