@@ -5,7 +5,7 @@ import effects.Effect._
 object Main extends App {
   import implicits._
   def goN(name: String)(n: Int): Effect[Int] =
-    if (n == 0) Pure(0)
+    if (n == 0) Pure(1)
     else Bind[Int, Unit](Library.putStrLn(s"$name: $n"), _ => goN(name)(n - 1))
 
   val fst = goN("first")(13)
@@ -25,5 +25,6 @@ object Main extends App {
     _ <- Library.putStrLn(s"sum is $sum")
   } yield ()
 
-  Runtime.runWithPar(program)
+  RTS.runParallel(program)
+  println("holla")
 }

@@ -8,6 +8,8 @@ trait EffectT[F[_]] {
   def pure[A](a: A): F[A]
 
   def par[A, B](fa: F[A], fb: F[B]): F[(A, B)]
+
+  def blocking[A](f: => A): F[A]
 }
 
 object EffectT {
